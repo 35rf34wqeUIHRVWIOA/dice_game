@@ -1,0 +1,30 @@
+import random
+
+print("--- Добро пожаловать в игру 'Кости'! ---")
+
+player1 = input("Введите имя первого игрока: ")
+player2 = input("Введите имя второго игрока: ")
+
+if player1 == "" or player2 == "":
+    print("Ошибка: Вы не ввели имена! Перезапустите игру.")
+else:
+    while True:
+        print("\nБросаем кубики...")
+        
+        roll1 = random.randint(1, 6)
+        roll2 = random.randint(1, 6)
+        
+        print(f"У {player1} выпало: {roll1}")
+        print(f"У {player2} выпало: {roll2}")
+        
+        if roll1 > roll2:
+            print(f"Победил {player1}!")
+        elif roll2 > roll1:
+            print(f"Победил {player2}!")
+        else:
+            print("Ничья!")
+            
+        answer = input("\nХотите сыграть еще раз? (да/нет): ")
+        if answer.lower() != "да":
+            print("Спасибо за игру! До встречи.")
+            break
